@@ -1,0 +1,12 @@
+.primary-button--small {
+  font-size: .325rem;
+  padding: .525rem 1rem;
+}
+.primary-button--medium {
+  font-size: .875rem;
+  padding: .725rem 1.325rem;
+}
+.primary-button--large {
+  font-size: 1rem;
+  padding: 1rem 2.225rem;
+}
