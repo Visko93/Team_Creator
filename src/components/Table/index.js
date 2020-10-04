@@ -1,8 +1,6 @@
-import React ,{useState} from 'react';
+import React  from 'react';
+import CustomSpeedDial from '../SpeedDial'
 
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 import { Edit, Share, Delete } from '@material-ui/icons';
 
 
@@ -14,16 +12,6 @@ const actions = [
   { icon: <Delete />, name: 'Delete' }
 ];
 const CreateRows = inputArray => {
-  const [open, setOpen] = useState(false);
-  const direction = 'left'
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return inputArray.map(row => (
           <tr className="table__body-row" key={row.id}>
@@ -31,23 +19,7 @@ const CreateRows = inputArray => {
             <td className="table__body-cell description">
               {row.description}
               <span className="table__icons">
-                <SpeedDial key={row.id}
-                  ariaLabel="SpeedDial openIcon example"
-                  icon={<SpeedDialIcon openIcon={<Edit />} />}
-                  onClose={handleClose}
-                  onOpen={handleOpen}
-                  open={open}
-                  direction={direction}
-                >
-                  {actions.map(action => (
-                    <SpeedDialAction 
-                      key={action.name}
-                      icon={action.icon}
-                      tooltipTitle={action.name}
-                      onClick={handleClose}
-                    />
-                  ))}
-                </SpeedDial>
+               <CustomSpeedDial actions={actions} startIcon={<Edit />}/>
               </span>
             </td>
           </tr>
