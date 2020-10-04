@@ -1,6 +1,6 @@
 # The team creator tool
 
 ## Index
-  - Introduction
-  - Used Stacks
-  - Runing IT
+  - Introduction[#intro]
+  - Used Stacks[#Used_Stacks]
+  - Runing IT[#Run]
