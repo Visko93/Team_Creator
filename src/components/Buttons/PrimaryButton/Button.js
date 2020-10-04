@@ -11,8 +11,6 @@ export const PrimaryButton = ({ primary, size, label, ...props }) => {
   return (
     <Button
       size={size}
-      className={primary ? 'primary' : 'secondary'}
-      color={primary ? 'primary' : 'secondary'}
       {...props}
     >
       {props.children 
@@ -27,16 +25,14 @@ PrimaryButton.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   label: PropTypes.string,
   onClick: PropTypes.func,
-  disable: PropTypes.bool,
+  disable: PropTypes.string,
   startIcon: PropTypes.element,
-  tooltip: PropTypes.string
 
 };
 
 PrimaryButton.defaultProps = {
   primary: false,
-  tooltip: null,
   size: 'medium',
   onClick: undefined,
-  disable: false
+  disable: "false"
 };

@@ -1,3 +1,8 @@
+header {
+  background: linear-gradient(to right, #BF1F4F, #972667);
+  color: #FFFF;
+}
+
 .wrapper {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -21,6 +26,3 @@ h1 {
   vertical-align: top;
 }
 
-button + button {
-  margin-left: 10px;
-}

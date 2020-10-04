@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list__item {
+  display: grid;
+  margin: 0;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #808080;
+  padding: .15em .2em;
+  border-radius: .75em;
+  font-size: .8rem;
+}

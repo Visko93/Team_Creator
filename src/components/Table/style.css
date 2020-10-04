@@ -1,0 +1,8 @@
+.table {
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}

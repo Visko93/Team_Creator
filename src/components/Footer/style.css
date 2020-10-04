@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  background: #f7597b41;
+}
+.footer h6 {
+  margin: 0;
+  line-height: 2rem;
+}
