@@ -30,3 +30,8 @@ export function CustomList({itens, ...props}) {
     </ul>
   )
 }
+
+
+CustomList.propTypes = {
+  itens: PropTypes.any.isRequired,
+};

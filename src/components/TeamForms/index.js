@@ -47,15 +47,17 @@ export default function CustomForm({chipData}) {
       </div>
       
       <div className="form__group">
-        <label htmlFor="description">Description</label>
-        <textarea 
-          name="description" 
-          id="description"
-          // value={""}
-          onChange={()=>{}}  
-        />
+        <label htmlFor="description">
+          Description
+          <textarea 
+            name="description" 
+            id="description"
+            // value={""}
+            onChange={()=>{}}  
+          />
+        </label>
 
-        <div className="form__group-sub">
+        <Paper>
           <fieldset className="team__choice">
             <legend>Team Type</legend>
           <ul>
@@ -67,9 +69,7 @@ export default function CustomForm({chipData}) {
               <input type="radio" id="fantasy" name="teamType" value="fantasy" />
               <label htmlFor="fantasy">Fantasy</label>
             </li>
-          </ul>
-          </fieldset>
-          <Paper>
+          </ul> 
             <Autocomplete
               multiple
               id="tags"
@@ -80,18 +80,18 @@ export default function CustomForm({chipData}) {
               renderTags={(tagValue) =>
                 tagValue.map((option) => (
                   <Chip
-                    key={option.key}
-                    label={option.label}
+                  key={option.key}
+                  label={option.label}
                   />
-                ))
-              }
-              renderInput={(params) => (
-                <TextField {...params} label="Fixed tag" variant="outlined" placeholder="Favorites" />
-              )}
-              />
+                  ))
+                }
+                renderInput={(params) => (
+                  <TextField {...params} label="Fixed tag" variant="outlined" placeholder="Favorites" />
+                  )}
+                  />
+            </fieldset>
           </Paper>
         </div>
-      </div>
       <h3 className="form__title">
         CONFIGURE THE SQUAD
       </h3>
@@ -110,7 +110,6 @@ export default function CustomForm({chipData}) {
           <canvas className="form-lineup">
 
           </canvas>
-        <PrimaryButton label="Save" className="primary" size={"large"}/>
         </div>
         <div className="form__group-sub">
           <label htmlFor="search" className="form__search-input">
@@ -125,6 +124,8 @@ export default function CustomForm({chipData}) {
           />
         </div>
       </div>
+      <PrimaryButton label="Save" className="primary" fullWidth={true}/>
+
     </form>
   )
 }

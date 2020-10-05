@@ -49,7 +49,6 @@ export default function Header ({ user }) {
                 size="small" 
                 label="Sign up"
                 className={classes.buttonStyle}
-
               />
             </>
           )}

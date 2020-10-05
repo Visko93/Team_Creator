@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom"
 import { PrimaryButton } from "../../components/Buttons/PrimaryButton/Button";
 import { AddCircle } from '@material-ui/icons'
@@ -8,7 +8,18 @@ import {CustomList} from '../../components/List/index'
 
 import './style.css'
 
+const INITIAL_STATE = [
+  { name: "Barcelona", description: "Barcelona Squad", id: 1},
+  { name: "Milan", description: "Milan Squad", id: 2},
+  { name: "Real Madrid", description: "Real Madrid Squad", id: 3},
+  { name: "Athletico", description: "Athletico Squad", id: 4}
+]
+const INITIAL_STATE_PLAYERS = ['first','second','third', 'fourth']
+
 export default function Home () {
+  const [teams, setTeams] = useState(INITIAL_STATE)
+  const [pickedPlayers, setPickedPlayers] = useState([])
+
   return (
     <>
     {/* the created team table */}
@@ -22,12 +33,7 @@ export default function Home () {
             </NavLink>
           </div>
         </div>
-        <CustomTable currentTeams={[
-          { name: "Barcelona", description: "Barcelona Squad", id: 1},
-          { name: "Milan", description: "Milan Squad", id: 2},
-          { name: "Real Madrid", description: "Real Madrid Squad", id: 3},
-          { name: "Athletico", description: "Athletico Squad", id: 4}
-        ]}/>
+        <CustomTable currentTeams={teams}/>
       </div> 
 
       {/* the ranking container */}
@@ -40,11 +46,11 @@ export default function Home () {
             <div className="ranking__lists">
               <div className="ranking__list">
                 <h3 className="ranking__list-title">Highest Average Age</h3>
-                <CustomList itens={['first','second','third', 'fourth']} />
+                <CustomList itens={INITIAL_STATE_PLAYERS} />
               </div>
               <div className="ranking__list">
                 <h3 className="ranking__list-title">Lowest Average Age</h3>
-                <CustomList itens={['first','second','third', 'fourth']} />
+                <CustomList itens={INITIAL_STATE_PLAYERS} />
               </div>
             </div>
             </div>
